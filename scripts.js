@@ -36,16 +36,14 @@ function Circle(x, y, dx, dy, radius) {
 }
 
 //two circles
-var circle = new Circle(300, 400, .25, .25, 70); //instantiate object
-var circle1 = new Circle(100, 600, .25, .25, 70);
+var circle = new Circle(300, 300, .5, .5, 100); //instantiate object
+var circle1 = new Circle(100, 500, .5, .5, 100);
 
 var x = Math.random() * innerWidth;
 var y = Math.random() * innerHeight;
-var dx = .25; //velocity
-var dy = .25;
-var radius = 70
-
-
+var dx = .5; //velocity
+var dy = .5;
+var radius = 100
 var randomHue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 
 //recursive loop so arc refreshes giving the illusion of animation
