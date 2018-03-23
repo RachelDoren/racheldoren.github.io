@@ -48,7 +48,7 @@ var radius = 70
 
 var randomHue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 
-//recursive loop so arc refreshes giving the illusion of animation
+//recursive loop so arc continuously refreshes giving the illusion of animation
 //this also creates the initial circle
 function animate() {
     requestAnimationFrame(animate);
