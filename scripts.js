@@ -5,6 +5,7 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext("2d");
 
+//Circle function which defined the circle object
 function Circle(x, y, dx, dy, radius) {
     this.x = x;
     this.y = y;
@@ -34,19 +35,21 @@ function Circle(x, y, dx, dy, radius) {
     }
 }
 
-var circle = new Circle(300, 400, 1, .8, 70); //instantiate an object
-var circle1 = new Circle(100, 600, 1, .5, 70); //instantiate an object
+//two circles
+var circle = new Circle(300, 400, .25, .25, 70); //instantiate object
+var circle1 = new Circle(100, 600, .25, .25, 70);
 
-//recursive loop
 var x = Math.random() * innerWidth;
 var y = Math.random() * innerHeight;
-var dx = 1; //velocity
-var dy = 1;
+var dx = .25; //velocity
+var dy = .25;
 var radius = 70
 
 
 var randomHue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 
+//recursive loop so arc refreshes giving the illusion of animation
+//this also creates the initial circle
 function animate() {
     requestAnimationFrame(animate);
     c.clearRect(0, 0, innerWidth, innerHeight);
