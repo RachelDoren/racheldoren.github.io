@@ -16,6 +16,7 @@ function Circle(x, y, dx, dy, radius) {
     this.draw = function() {
     c.beginPath(); 
     c.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
+    c.fillText("test");
     c.fill();
     c.strokeStyle = randomHue;
     c.stroke();
@@ -36,17 +37,19 @@ function Circle(x, y, dx, dy, radius) {
 }
 
 //two circles
-var circle = new Circle(300, 300, .5, .5, 100); //instantiate object
-var circle1 = new Circle(100, 500, .5, .5, 100);
+var circle = new Circle(100, 300, .5, .5, 100); //instantiate object
+var circle1 = new Circle(400, 100, .5, .5, 100);
 
 var x = Math.random() * innerWidth;
 var y = Math.random() * innerHeight;
 var dx = .5; //velocity
 var dy = .5;
 var radius = 100
+
+
 var randomHue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 
-//recursive loop so arc continuously refreshes giving the illusion of animation
+//recursive loop so arc refreshes giving the illusion of animation
 //this also creates the initial circle
 function animate() {
     requestAnimationFrame(animate);
@@ -57,6 +60,7 @@ function animate() {
 
     c.beginPath(); 
     c.arc(x, y, radius, 0, 2 * Math.PI, false);
+
     c.fill();
     c.strokeStyle = randomHue;
     c.stroke();
