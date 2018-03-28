@@ -16,7 +16,7 @@ function Circle(x, y, dx, dy, radius) {
     this.draw = function() {
     c.beginPath(); 
     c.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
-    c.fillText("test");
+    c.fillStyle = randomHue;
     c.fill();
     c.strokeStyle = randomHue;
     c.stroke();
@@ -60,7 +60,6 @@ function animate() {
 
     c.beginPath(); 
     c.arc(x, y, radius, 0, 2 * Math.PI, false);
-
     c.fill();
     c.strokeStyle = randomHue;
     c.stroke();
