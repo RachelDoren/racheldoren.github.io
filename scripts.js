@@ -14,13 +14,13 @@ function Circle(x, y, dx, dy, radius) {
     this.radius = radius;
 
     this.draw = function() {
-    c.beginPath(); 
-    c.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
-    c.fillStyle = randomHue; 
-    c.fill();
-    c.strokeStyle = randomHue;
-    c.stroke();
-        }
+        c.beginPath();
+        c.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
+        c.fillStyle = randomHue;
+        c.fill();
+        c.strokeStyle = randomHue;
+        c.stroke();
+    }
 
     this.update = function() {
         if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
@@ -29,8 +29,8 @@ function Circle(x, y, dx, dy, radius) {
         if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
             this.dy = -this.dy;
         }
-        this.x+= this.dx;
-        this.y+= this.dy;
+        this.x += this.dx;
+        this.y += this.dy;
 
         this.draw();
     }
@@ -72,18 +72,18 @@ function animate() {
     if (y + radius > innerHeight || y - radius < 0) {
         dy = -dy;
     }
-    x+= dx;
-    y+= dy;
+    x += dx;
+    y += dy;
 }
 
 animate();
 
 function collisionDetection() {
-    if (circle.x < circle1.x + (circle1.radius * 2)  && circle.x + (circle.radius * 2)  > circle1.x &&
-    circle.y < circle1.y + (circle1.radius * 2) && circle.y + (circle.radius * 2) > circle1.y) {
+    if (circle.x < circle1.x + (circle1.radius * 2) && circle.x + (circle.radius * 2) > circle1.x &&
+        circle.y < circle1.y + (circle1.radius * 2) && circle.y + (circle.radius * 2) > circle1.y) {
         dx = -dx;
         dy = -dy;
-}
+    }
 }
 
 collisionDetection();
